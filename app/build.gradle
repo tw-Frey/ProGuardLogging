@@ -1,11 +1,25 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20'
+    }
 }
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     compileSdk 31
-
+    buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "tw.idv.fy.proguard.logging"
         minSdk 21
